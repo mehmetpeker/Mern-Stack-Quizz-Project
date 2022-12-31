@@ -30,7 +30,7 @@ function WriteExam() {
       dispatch(HideLoading());
       if (response.success) {
         setQuestions(response.data.questions);
-        verdictsetExamData(response.data);
+        setExamData(response.data);
         setSecondsLeft(response.data.duration);
       } else {
         message.error(response.message);
@@ -232,14 +232,7 @@ function WriteExam() {
                   >
                     Sınava Tekrar Gir
                   </button>
-                  <button
-                    className="primary-contained-btn"
-                    onClick={() => {
-                      setView("review");
-                    }}
-                  >
-                    Yanıtları incele
-                  </button>
+              
                 </div>
               </div>
             </div>

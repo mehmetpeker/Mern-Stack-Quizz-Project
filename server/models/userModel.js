@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
-//Veritabanındaki User şeması
 const userSchema = new mongoose.Schema(
   {
-    username: {
+    name: {
       type: String,
       required: true,
     },
@@ -26,4 +25,5 @@ const userSchema = new mongoose.Schema(
 );
 
 const userModel = mongoose.model("users", userSchema);
+
 module.exports = userModel;

@@ -4,14 +4,12 @@ const User = require("../models/userModel");
 const Report = require("../models/reportModel");
 const router = require("express").Router();
 
-// Rapor ekle
-
 router.post("/add-report", authMiddleware, async (req, res) => {
   try {
     const newReport = new Report(req.body);
     await newReport.save();
     res.send({
-      message: "Rapor başarı ile eklendi",
+      message: "Rapor başarıyla eklendi",
       success: true,
     });
   } catch (error) {
@@ -22,8 +20,6 @@ router.post("/add-report", authMiddleware, async (req, res) => {
     });
   }
 });
-
-// Tüm raporları getirir
 
 router.post("/get-all-reports", authMiddleware, async (req, res) => {
   try {
@@ -57,7 +53,7 @@ router.post("/get-all-reports", authMiddleware, async (req, res) => {
       .populate("user")
       .sort({ createdAt: -1 });
     res.send({
-      message: "Rapor başarı ile elde edildi",
+      message: "Rapor başarıyla elde edildi",
       data: reports,
       success: true,
     });
@@ -70,7 +66,6 @@ router.post("/get-all-reports", authMiddleware, async (req, res) => {
   }
 });
 
-// Verilen user bilgisine göre tüm reportları getirir
 router.post("/get-all-reports-by-user", authMiddleware, async (req, res) => {
   try {
     const reports = await Report.find({ user: req.body.userId })

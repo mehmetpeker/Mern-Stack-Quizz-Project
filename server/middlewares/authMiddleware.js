@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
     next();
   } catch (error) {
     res.status(401).send({
-      message: "Kimlik doğrulanamadı.",
+      message: "Yetkiye sahip değilsin!",
       data: error,
       success: false,
     });

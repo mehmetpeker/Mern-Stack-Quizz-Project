@@ -47,10 +47,10 @@ function Login() {
                 type="submit"
                 className="primary-contained-btn mt-2 w-100"
               >
-                Giriş Yapma
+                Giriş Yap
               </button>
               <Link to="/register" className="underline">
-                Hesabın yok mu? Giriş Yap
+                Hesabın yok mu? Kayıt Ol
               </Link>
             </div>
           </Form>
